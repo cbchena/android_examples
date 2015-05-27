@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="app_name">voice_rcd</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">模仿微信聊天</string>
+    
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_item_clear_memory_cache">Clear memory cache</string>
+    <string name="menu_item_clear_disc_cache">Clear disc cache</string>
+    <string name="menu_item_pause_on_scroll">Pause on scroll</string>
+    <string name="menu_item_pause_on_fling">Pause on fling</string>
+    <string name="viewpager_indicator">%1$d/%2$d</string>
+</resources>

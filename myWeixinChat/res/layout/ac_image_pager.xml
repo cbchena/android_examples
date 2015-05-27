@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.nostra13.example.universalimageloader.MutipleTouchViewPager
+        xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pager"
+    android:background="#000000"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" />
