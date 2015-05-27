@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MyGuideView02</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string name="guide_text01">\n微信\n超过1亿人使用的手机应用</string>
+    <string name="guide_text02">\n按住就能说话\n聊天是如此简单轻松</string>
+    <string name="guide_text03">透过视频聊天\n你甚至可以和朋友们\n面对面沟通</string>
+    <string name="guide_text04">摇一摇手机\n或者看看附近的人\n认识更多的朋友</string>
+    <string name="guide_text05">\n你还可以透过朋友圈\n和朋友们分享彼此的生活</string>
+    <string name="guide_text06">\n\n微信，是一个生活方式</string>
+    
+    <string name="guide_btn_text">开始我的微信生活</string>
+</resources>
