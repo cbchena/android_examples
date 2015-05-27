@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+        >
+
+    <!--<com.baidu.mapapi.map.MapView-->
+            <!--android:id="@+id/bmapView"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"/>-->
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+
+        <Button android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/btnDwnManager"
+                android:text="下载管理"
+                android:textSize="15dp"
+                android:textColor="#ffffff"
+                android:onClick="OnDownloadManager"
+                android:background="@drawable/register_get_code_btn_bg"
+                android:layout_weight="1"/>
+
+        <Button android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/btnCityList"
+                android:text="城市列表"
+                android:textSize="15dp"
+                android:textColor="#ffffff"
+                android:onClick="OnCityList"
+                android:background="@drawable/register_icon_bg"
+                android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <ListView android:id="@+id/lstUpdateItem"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:groupIndicator="@null"
+              android:divider="@null" />
+
+    <ExpandableListView android:id="@+id/lstItem"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:groupIndicator="@null"
+              android:visibility="gone"
+              android:divider="@null">
+
+    </ExpandableListView>
+
+</LinearLayout>
+
