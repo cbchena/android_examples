@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FrameLayout android:gravity="center_vertical" android:id="@+id/layout_search_bar" android:background="@drawable/bg_contact_search" android:paddingLeft="10.0dip" android:paddingTop="5.0dip" android:paddingRight="10.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="45.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:textSize="14.0sp"
+              android:layout_gravity="center_vertical"
+              android:id="@+id/edit_search"
+              android:background="@drawable/bg_contact_search_edittext"
+              android:paddingLeft="24.0dip"
+              android:paddingTop="5.0dip"
+              android:paddingBottom="5.0dip"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:textColor="#000000"
+              android:hint="通讯录"
+              android:singleLine="true" />
+    <ImageView android:layout_gravity="center_vertical" android:paddingLeft="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_hi_search" />
+    <ImageView android:layout_gravity="right|center" android:id="@+id/btn_clean_search" android:paddingLeft="4.0dip" android:paddingRight="4.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_del_search_normal" />
+</FrameLayout>
