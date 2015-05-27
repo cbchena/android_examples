@@ -1,68 +1,35 @@
 package com.example.voice_rcd.upload;
 
-import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Upload {
 
-    private static boolean _isUploading = false;
-    private static List<String> _lstPath = new ArrayList<String>();
-    private static List<Handler> _lstBeginHandler = new ArrayList<Handler>();
-    private static List<Handler> _lstEndHandler = new ArrayList<Handler>();
-    private static List<Handler> _lstErrorHandler = new ArrayList<Handler>();
+    public static boolean isUploading = false;
+    private static List<String> _lstPath = new ArrayList<String>(); // 文件路径
+    private static List<Handler> _lstBeginHandler = new ArrayList<Handler>(); // 开始处理器
+    private static List<Handler> _lstEndHandler = new ArrayList<Handler>(); // 结束处理器
+    private static List<Handler> _lstErrorHandler = new ArrayList<Handler>(); // 错误处理器
+    private static List<Map<String, String>> _lstParams = new ArrayList<Map<String, String>>(); // 参数
+    private static Handler _AllEndHandler; // 全部结束处理器
 
-    private static Handler _handler = new Handler() { // 开始时，发送
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            Bundle bundle = msg.getData();
-            if (bundle == null) return;
+    /**
+     * 设置AllEnd处理器 2015/4/14 19:09
+     */
+    public static void set_AllEndHandler(Handler allEnd){
+        _AllEndHandler = allEnd;
+    }
 
-            // 发送 2015/2/4 18:03
-            if (_lstBeginHandler.size() > 0) {
-                Message message = new Message();
-                message.setData(bundle);
-                Handler handler = _lstBeginHandler.remove(0);
-                handler.sendMessage(message);
-            }
-        }
-    };
-
-    private static Handler _endHandler = new Handler() { // 结束时，发送
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-
-            // 发送 2015/2/4 18:03
-            if (_lstEndHandler.size() > 0) {
-                Handler handler = _lstEndHandler.remove(0);
-                handler.sendEmptyMessage(0);
-            }
-
-            _isUploading = false;
-            _upload();
-        }
-    };
-
-    private static Handler _errorHandler = new Handler() { // 发送错误
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            _isUploading = false;
-
-            // 发送 2015/2/4 18:03
-            if (_lstErrorHandler.size() > 0) {
-                Handler handler = _lstErrorHandler.remove(0);
-                handler.sendEmptyMessage(0);
-            }
-
-            _upload();
-        }
-    };
+    /**
+     * 继续上传 2015/2/27 17:49
+     */
+    public static void continueUpload() {
+        isUploading = false;
+        _upload();
+    }
 
     /**
      * 上传 2015/2/4 17:55
@@ -70,11 +37,14 @@ public class Upload {
      * @param begin
      * @param end
      */
-    public static void upload(String path, Handler begin, Handler end, Handler error) {
+    public static void upload(String path, Handler begin, Handler end,
+                              Handler error, Map<String, String> params) {
+
         _lstPath.add(path);
         _lstBeginHandler.add(begin);
         _lstEndHandler.add(end);
         _lstErrorHandler.add(error);
+        _lstParams.add(params);
         _upload();
     }
 
@@ -82,15 +52,20 @@ public class Upload {
      * 上传 2015/2/4 18:02
      */
     private static void _upload() {
-        if (!_isUploading && _lstPath.size() > 0) {
-            _isUploading = true;
+        if (_lstPath.size() == 0 && _AllEndHandler != null)
+            _AllEndHandler.sendEmptyMessage(0);
+
+        if (!isUploading && _lstPath.size() > 0) {
+            isUploading = true;
             List<String> _lstFilePath = new ArrayList<String>();
             _lstFilePath.add(_lstPath.remove(0));
 
             HttpMultipartPost post = new HttpMultipartPost(_lstFilePath,
-                    _handler, _endHandler, _errorHandler);
+                    _lstBeginHandler.remove(0), _lstEndHandler.remove(0),
+                    _lstErrorHandler.remove(0), _lstParams.remove(0));
             post.execute();
         }
+
     }
 
 }

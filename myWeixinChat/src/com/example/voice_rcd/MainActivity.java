@@ -30,6 +30,7 @@ import java.util.List;
 
 /**
  * 聊天窗口 2015/2/2 16:42
+ * PS:记得更改上传地址。
  */
 public class MainActivity extends Activity implements OnClickListener {
 

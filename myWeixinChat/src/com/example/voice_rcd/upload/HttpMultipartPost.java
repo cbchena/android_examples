@@ -5,7 +5,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import com.example.voice_rcd.upload.CustomMultipartEntity.ProgressListener;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
@@ -15,10 +14,13 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.nio.charset.Charset;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Multipart上传
@@ -33,17 +35,21 @@ public class HttpMultipartPost extends AsyncTask<String, Integer, String> {
     private Handler _handler;
     private Handler _endHandler;
     private Handler _errorHandler;
+    private Map<String, String> _params;
+    private boolean _isStart = false;
 
 	public HttpMultipartPost(List<String> filePathList) {
 		this.filePathList = filePathList;
 	}
 
     public HttpMultipartPost(List<String> filePathList,
-                             Handler handler, Handler endHandler, Handler errorHandler) {
+                             Handler handler, Handler endHandler,
+                             Handler errorHandler, Map<String, String> params) {
         this(filePathList);
         _handler = handler;
         _endHandler = endHandler;
         _errorHandler = errorHandler;
+        _params = params;
     }
 
 	@Override
@@ -55,16 +61,38 @@ public class HttpMultipartPost extends AsyncTask<String, Integer, String> {
 //		pd.show();
 	}
 
+    /**
+     * 处理参数 2015/2/27 11:51
+     * @param mapParams 参数
+     * @return String
+     */
+    private static String getUrl(String url, Map<String, String> mapParams) {
+
+        url += "?";
+        int idx = 0;
+        for (String string : mapParams.keySet()) {
+            if (idx > 0)
+                url += "&" + string + "=" + mapParams.get(string);
+            else
+                url += string + "=" + mapParams.get(string);
+
+            idx++;
+        }
+
+        System.out.println("HttpMultipartPost's url: " + url);
+        return url;
+    }
+
 	@Override
 	protected String doInBackground(String... params) {
 		String serverResponse = null;
 		HttpClient httpClient = new DefaultHttpClient();
 		HttpContext httpContext = new BasicHttpContext();
-		HttpPost httpPost = new HttpPost("http://192.168.1.122:8080/FileUploadServlet/FileUpload?TAG=MLE");
+		HttpPost httpPost = new HttpPost(getUrl("上传地址...", _params));
 
 		try {
 			CustomMultipartEntity multipartContent = new CustomMultipartEntity(
-					new ProgressListener() {
+					new CustomMultipartEntity.ProgressListener() {
 						@Override
 						public void transferred(long num) {
 							publishProgress((int) ((num / (float) totalSize) * 100));
@@ -84,7 +112,6 @@ public class HttpMultipartPost extends AsyncTask<String, Integer, String> {
 
 			
 			totalSize = multipartContent.getContentLength();
-			System.out.println("totalSize:========="+totalSize);
 
 			// Send it
 			httpPost.setEntity(multipartContent);
@@ -92,7 +119,6 @@ public class HttpMultipartPost extends AsyncTask<String, Integer, String> {
 			serverResponse = EntityUtils.toString(response.getEntity());
 			
 		} catch (Exception e) {
-			e.printStackTrace();
             if (_errorHandler != null)
                 _errorHandler.sendEmptyMessage(0);
 		}
@@ -116,9 +142,21 @@ public class HttpMultipartPost extends AsyncTask<String, Integer, String> {
 	}
 
 	@Override
-	protected void onPostExecute(String result) {
-		System.out.println("result: " + result);
-        if (_endHandler != null && result != null)
+	protected void onPostExecute(String context) {
+
+        JSONObject jsonObject;
+        String result = null;
+        if (context == null) return;
+
+        try {
+            jsonObject = new JSONObject(context);
+            result = jsonObject.getString("result");
+        } catch (JSONException e) {
+//            logger.error("End upload error.", e);
+        }
+
+//        logger.debug("End upload result code is {}.", result);
+        if (_endHandler != null && "0".equals(result))
             _endHandler.sendEmptyMessage(0);
 
 //		pd.dismiss();
@@ -126,7 +164,6 @@ public class HttpMultipartPost extends AsyncTask<String, Integer, String> {
 
 	@Override
 	protected void onCancelled() {
-		System.out.println("cancle");
         if (_errorHandler != null)
             _errorHandler.sendEmptyMessage(0);
 	}
