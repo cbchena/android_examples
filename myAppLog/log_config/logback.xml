@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration>
+	<!-- 系统程序日志配置 -->
+	<!-- 将日志打印到控制台 -->
+	<appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss,SSS} %-5p %m%n</pattern>
+		</encoder>
+	</appender>
+	
+	<!-- 将日志打印到文件 -->
+	<appender name="fileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>/sdcard/andy/logs1/andy.log</File>
+        <append>true</append>
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>%d %-5p %m%n</pattern>
+		</encoder>
+
+        <!-- 路径：../logs/fandy/andy.log  时间：{yyyy-MM-dd-HH}，以小时分隔  -->
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/sdcard/andy/logs1/andy.log.%d{yyyy-MM-dd}
+			</fileNamePattern>
+		</rollingPolicy>
+	</appender>
+	
+	<logger name="myAppLog" level="INFO">
+		<appender-ref ref="consoleAppender" />
+		<appender-ref ref="fileAppender" />
+	</logger>
+	
+	<root level="INFO"> <!-- 日志级别 -->
+		<appender-ref ref="consoleAppender" />
+		<appender-ref ref="fileAppender" />
+	</root>
+
+</configuration>
