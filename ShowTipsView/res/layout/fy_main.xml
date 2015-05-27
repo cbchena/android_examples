@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ll_main"
+    android:orientation="vertical">
+
+    <TextView android:text="主界面"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"/>
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+        <Button android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnSOS"
+                android:layout_marginTop="120dp"
+                android:text="SOS"/>
+
+        <Button android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="220dp"
+                android:id="@+id/btnZone"
+                android:onClick="OnZone"
+                android:text="安全空间"/>
+    </RelativeLayout>
+</LinearLayout>
