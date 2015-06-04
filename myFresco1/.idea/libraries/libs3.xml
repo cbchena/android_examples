@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="libs3">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/imagepipeline-okhttp/libs" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/imagepipeline-okhttp/libs" recursive="false" />
+  </library>
+</component>

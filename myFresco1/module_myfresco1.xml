@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_myfresco1" default="compile.module.myfresco1">
+  <dirname property="module.myfresco1.basedir" file="${ant.file.module_myfresco1}"/>
+  
+  <property name="module.jdk.home.myfresco1" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.myfresco1" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.myfresco1" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.myfresco1" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="myfresco1.output.dir" value="${module.myfresco1.basedir}/out/production/myFresco1"/>
+  <property name="myfresco1.testoutput.dir" value="${module.myfresco1.basedir}/out/test/myFresco1"/>
+  
+  <path id="myfresco1.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="myfresco1.module.production.classpath">
+    <path refid="${module.jdk.classpath.myfresco1}"/>
+    <path refid="library.libs.classpath"/>
+    <pathelement location="${drawee.output.dir}"/>
+    <path refid="library.libs1.classpath"/>
+    <pathelement location="${fbcore.output.dir}"/>
+    <path refid="library.libs2.classpath"/>
+    <pathelement location="${fresco.output.dir}"/>
+    <path refid="library.libs3.classpath"/>
+    <pathelement location="${imagepipeline.output.dir}"/>
+    <path refid="library.libs4.classpath"/>
+    <pathelement location="${imagepipeline-okhttp.output.dir}"/>
+    <path refid="library.libs5.classpath"/>
+  </path>
+  
+  <path id="myfresco1.runtime.production.module.classpath">
+    <pathelement location="${myfresco1.output.dir}"/>
+    <path refid="library.libs.classpath"/>
+    <path refid="drawee.runtime.production.module.classpath"/>
+    <path refid="fbcore.runtime.production.module.classpath"/>
+    <path refid="fresco.runtime.production.module.classpath"/>
+    <path refid="imagepipeline.runtime.production.module.classpath"/>
+    <path refid="imagepipeline-okhttp.runtime.production.module.classpath"/>
+  </path>
+  
+  <path id="myfresco1.module.classpath">
+    <path refid="${module.jdk.classpath.myfresco1}"/>
+    <pathelement location="${myfresco1.output.dir}"/>
+    <path refid="library.libs.classpath"/>
+    <pathelement location="${drawee.testoutput.dir}"/>
+    <pathelement location="${drawee.output.dir}"/>
+    <path refid="library.libs1.classpath"/>
+    <pathelement location="${fbcore.testoutput.dir}"/>
+    <pathelement location="${fbcore.output.dir}"/>
+    <path refid="library.libs2.classpath"/>
+    <pathelement location="${fresco.testoutput.dir}"/>
+    <pathelement location="${fresco.output.dir}"/>
+    <path refid="library.libs3.classpath"/>
+    <pathelement location="${imagepipeline.testoutput.dir}"/>
+    <pathelement location="${imagepipeline.output.dir}"/>
+    <path refid="library.libs4.classpath"/>
+    <pathelement location="${imagepipeline-okhttp.testoutput.dir}"/>
+    <pathelement location="${imagepipeline-okhttp.output.dir}"/>
+    <path refid="library.libs5.classpath"/>
+  </path>
+  
+  <path id="myfresco1.runtime.module.classpath">
+    <pathelement location="${myfresco1.testoutput.dir}"/>
+    <pathelement location="${myfresco1.output.dir}"/>
+    <path refid="library.libs.classpath"/>
+    <path refid="drawee.runtime.module.classpath"/>
+    <path refid="fbcore.runtime.module.classpath"/>
+    <path refid="fresco.runtime.module.classpath"/>
+    <path refid="imagepipeline.runtime.module.classpath"/>
+    <path refid="imagepipeline-okhttp.runtime.module.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.myfresco1">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.myfresco1">
+    <patternset refid="excluded.from.module.myfresco1"/>
+  </patternset>
+  
+  <path id="myfresco1.module.sourcepath">
+    <dirset dir="${module.myfresco1.basedir}">
+      <include name="src"/>
+      <include name="gen"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.myfresco1" depends="compile.module.myfresco1.production,compile.module.myfresco1.tests" description="Compile module myFresco1"/>
+  
+  <target name="compile.module.myfresco1.production" depends="register.custom.compilers,compile.module.drawee,compile.module.fbcore,compile.module.fresco,compile.module.imagepipeline,compile.module.imagepipeline-okhttp" description="Compile module myFresco1; production classes">
+    <mkdir dir="${myfresco1.output.dir}"/>
+    <javac2 destdir="${myfresco1.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.myfresco1}/javac">
+      <compilerarg line="${compiler.args.myfresco1}"/>
+      <bootclasspath refid="myfresco1.module.bootclasspath"/>
+      <classpath refid="myfresco1.module.production.classpath"/>
+      <src refid="myfresco1.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.myfresco1"/>
+    </javac2>
+    
+    <copy todir="${myfresco1.output.dir}">
+      <fileset dir="${module.myfresco1.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.myfresco1.basedir}/gen">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.myfresco1.tests" depends="register.custom.compilers,compile.module.myfresco1.production" description="compile module myFresco1; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.myfresco1" description="cleanup module">
+    <delete dir="${myfresco1.output.dir}"/>
+    <delete dir="${myfresco1.testoutput.dir}"/>
+  </target>
+</project>

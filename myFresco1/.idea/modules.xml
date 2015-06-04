@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/drawee/drawee.iml" filepath="$PROJECT_DIR$/drawee/drawee.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fbcore/fbcore.iml" filepath="$PROJECT_DIR$/fbcore/fbcore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fresco/fresco.iml" filepath="$PROJECT_DIR$/fresco/fresco.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imagepipeline/imagepipeline.iml" filepath="$PROJECT_DIR$/imagepipeline/imagepipeline.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imagepipeline-okhttp/imagepipeline-okhttp.iml" filepath="$PROJECT_DIR$/imagepipeline-okhttp/imagepipeline-okhttp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myFresco1.iml" filepath="$PROJECT_DIR$/myFresco1.iml" />
+    </modules>
+  </component>
+</project>
+
