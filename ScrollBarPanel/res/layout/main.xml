@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <com.dafruits.android.library.widgets.ExtendedListView
+        xmlns:dafruits="http://schemas.android.com/apk/res/com.dafruits.android.samples"
+        android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:choiceMode="singleChoice"
+        dafruits:scrollBarPanel="@layout/scrollbarpanel"
+        dafruits:scrollBarPanelInAnimation="@anim/in"
+        dafruits:scrollBarPanelOutAnimation="@anim/out" />
+
+</LinearLayout>
