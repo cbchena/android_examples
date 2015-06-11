@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:maskimage="http://schemas.android.com/apk/res/com.example.myMask"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+        >
+
+    <ImageView android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:scaleType="center"
+               android:id="@+id/img"
+            />
+
+    <com.example.myMask.MaskImage
+            android:id="@+id/imageview_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            maskimage:image="@drawable/tab_home_btn_110"
+            maskimage:mask="@drawable/chatting_content_right_bg" />
+
+</LinearLayout>
+
