@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://D:/Program_Files/android-sdk-windows24.0/extras/android/support/v7/appcompat/android-support-v7-appcompat.iml" filepath="D:/Program_Files/android-sdk-windows24.0/extras/android/support/v7/appcompat/android-support-v7-appcompat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myVelocimeter.iml" filepath="$PROJECT_DIR$/myVelocimeter.iml" />
+    </modules>
+  </component>
+</project>
+
