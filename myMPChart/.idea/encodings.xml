@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/assets/OpenSans-Bold.ttf" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/assets/OpenSans-BoldItalic.ttf" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/assets/OpenSans-ExtraBold.ttf" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/assets/OpenSans-ExtraBoldItalic.ttf" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/assets/OpenSans-Italic.ttf" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/assets/OpenSans-Light.ttf" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/assets/OpenSans-LightItalic.ttf" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/assets/OpenSans-Regular.ttf" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/assets/OpenSans-Semibold.ttf" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/assets/OpenSans-SemiboldItalic.ttf" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/assets/cosine.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/assets/hugecosine.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/assets/hugesine.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/assets/n.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/assets/nlogn.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/assets/othersine.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/assets/sine.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/assets/square.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/assets/stacked_bars.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/assets/three.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libs/android-support-v4.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xxmassdeveloper/mpchartexample/LineChartActivity3.java" charset="UTF-8" />
+  </component>
+</project>
