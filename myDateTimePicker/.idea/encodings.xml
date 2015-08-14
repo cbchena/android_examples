@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/libs/android-support-v4.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libs/nineoldandroids-2.3.0.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ai/android/picker/DatePicker.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ai/android/picker/NumberPicker.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ai/android/picker/Scroller.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ai/android/picker/TimePicker.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ai/android/picker/test" charset="UTF-8" />
+  </component>
+</project>
