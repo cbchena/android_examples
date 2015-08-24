@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+        >
+
+    <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content">
+
+        <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:id="@+id/progress_two"
+                app:rcBackgroundColor="@color/custom_progress_background"
+                app:rcBackgroundPadding="2dp"
+                app:rcBackgroundRadius="10dp"
+                app:rcMax="100"
+                app:rcProgress="50"
+                app:rcProgressColor="@color/custom_progress_blue_progress" />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:textSize="16dp"
+                android:textColor="#ffffffff"
+                android:text="50%"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
+
