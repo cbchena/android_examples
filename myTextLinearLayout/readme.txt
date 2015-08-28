@@ -1,0 +1,1 @@
+自动换行的文本布局(TextLinearLayout)。
