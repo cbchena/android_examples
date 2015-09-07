@@ -1,0 +1,1 @@
+EaseInterpolator可以参考，然后实现不同的动画加速度。

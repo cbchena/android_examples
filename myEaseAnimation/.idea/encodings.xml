@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/libs/android-support-v4.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/layout" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/menu" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/values-w820dp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/values/dimens.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/values/styles.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/cimi" charset="UTF-8" />
+  </component>
+</project>
