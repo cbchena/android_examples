@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/image/explosionfield.gif" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/layout" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/menu" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/mipmap-hdpi" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/mipmap-mdpi" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/mipmap-xhdpi" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/mipmap-xxhdpi" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/values" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/values-w820dp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/tyrantgit" charset="UTF-8" />
+  </component>
+</project>
