@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:colorpicker="http://schemas.android.com/apk/res/com.xiaowu.colorpicker"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.xiaowu.colorpicker.ColorPickView
+        android:id="@+id/color_picker_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        colorpicker:center_color="#FFFFFF"
+        colorpicker:center_radius="10dp"
+        colorpicker:circle_radius="150dp" />
+
+    <TextView
+        android:id="@+id/txt_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/color_picker_view"
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp"
+        android:layout_marginTop="37dp"
+        android:text="color" />
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="horizontal"
+            android:layout_below="@+id/txt_color">
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:id="@+id/txtR"
+                  android:gravity="center"
+                android:textSize="16dp"
+                android:layout_weight="1"/>
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:id="@+id/txtG"
+                  android:gravity="center"
+                  android:textSize="16dp"
+                  android:layout_weight="1"/>
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:id="@+id/txtB"
+                  android:gravity="center"
+                  android:textSize="16dp"
+                  android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
