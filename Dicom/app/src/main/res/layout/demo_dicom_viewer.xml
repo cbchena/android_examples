@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ android:orientation="horizontal"
+ android:layout_width="fill_parent"
+ android:layout_height="fill_parent">
+ 
+ 	<LinearLayout android:id="@+id/toolBar"
+				  android:visibility="gone"
+	 	android:orientation="horizontal"
+	 	android:layout_width="wrap_content"
+	 	android:layout_height="fill_parent"
+	 	android:longClickable="true">
+ 
+	 	<LinearLayout
+	 		android:orientation="vertical"
+	 		android:layout_width="wrap_content"
+	 		android:layout_height="fill_parent"
+	 		android:background="#ff505050"
+	 		android:gravity="center">
+	 		
+	 		<ScrollView
+	 			android:layout_width="wrap_content"
+	 			android:layout_height="wrap_content"
+	 			android:layout_weight="1">
+	 		
+	 			<LinearLayout
+	 				android:orientation="vertical"
+	 				android:layout_width="wrap_content"
+	 				android:layout_height="wrap_content">
+	 				
+	 				<Button android:id="@+id/dimensionMode"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:onClick="dimensionMode"
+						android:layout_margin="5dip"
+						android:background="@drawable/ruler" />
+						
+					<View
+	 					android:layout_width="fill_parent"
+	 					android:layout_height="1dip"
+	 					android:layout_marginTop="10dip"
+	 					android:layout_marginBottom="10dip"
+	 					android:background="#ff7d7d7d" />
+						
+					<Button android:id="@+id/grayscaleMode"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:onClick="grayscaleMode"
+						android:layout_marginLeft="5dip"
+						android:layout_marginRight="5dip"
+						android:layout_marginTop="5dip"
+						android:layout_marginBottom="10dip"
+						android:background="@drawable/grayscale" />
+						
+					<Button android:id="@+id/clutNormal"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:onClick="setCLUTMode"
+						android:layout_margin="5dip"
+						android:background="@drawable/clut_normal_select" />
+						
+					<Button android:id="@+id/clutInverse"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:onClick="setCLUTMode"
+						android:layout_margin="5dip"
+						android:background="@drawable/clut_inverse" />
+						
+					<Button android:id="@+id/clutRainbow"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:onClick="setCLUTMode"
+						android:layout_margin="5dip"
+						android:background="@drawable/clut_rainbow" />
+						
+					<!-- <View
+	 					android:layout_width="fill_parent"
+	 					android:layout_height="1dip"
+	 					android:layout_marginTop="10dip"
+	 					android:layout_marginBottom="10dip"
+	 					android:background="#ff7d7d7d" />
+						
+					<Button android:id="@+id/configButton"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:onClick="grayscaleMode"
+						android:layout_margin="5dip"
+						android:background="@drawable/config" /> -->
+	 			
+	 			</LinearLayout>
+	 		
+	 		</ScrollView>
+	 		
+	 		<Button android:id="@+id/lockUnlockToolbar"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:onClick="lockUnlockToolBar"
+				android:layout_margin="5dip"
+				android:background="@drawable/unlock" />
+	 		
+	 		<View
+	 			android:layout_width="fill_parent"
+	 			android:layout_height="1dip"
+	 			android:layout_marginBottom="2dip"
+	 			android:background="#ff7d7d7d" />
+	 		
+	 		<View
+	 			android:layout_width="fill_parent"
+	 			android:layout_height="1dip"
+	 			android:layout_marginBottom="2dip"
+	 			android:background="#ff7d7d7d" />
+	 			
+	 		<View
+	 			android:layout_width="fill_parent"
+	 			android:layout_height="1dip"
+	 			android:layout_marginBottom="10dip"
+	 			android:background="#ff7d7d7d" />
+	 		
+	 		<ImageView
+	 			android:layout_width="wrap_content"
+	 			android:layout_height="wrap_content"
+	 			android:background="@drawable/ddv_toolbar" />
+	 	
+	 	</LinearLayout>
+	 	
+	 	<View
+	 		android:layout_width="1dip"
+	 		android:layout_height="fill_parent"
+	 		android:background="#ffcccccc" />
+	 		
+	 	<View
+	 		android:layout_width="3dip"
+	 		android:layout_height="fill_parent"
+	 		android:background="#ffb8b7b8" />
+	 		
+	 </LinearLayout>
+
+	<RelativeLayout
+		android:layout_width="wrap_content" 
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+	
+		<FrameLayout
+	   	android:layout_width="fill_parent" 
+        android:layout_height="fill_parent">
+	   
+	   
+
+		<be.ac.ulb.lisa.idot.android.dicomviewer.view.DICOMImageView android:id="@+id/imageView" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="matrix"></be.ac.ulb.lisa.idot.android.dicomviewer.view.DICOMImageView>
+</FrameLayout>
+		
+		<Button android:id="@+id/currentToolButton"
+				android:visibility="gone"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentTop="true"
+			android:onClick="showToolBar"
+			android:layout_margin="5dip"
+			android:background="@drawable/ruler" />
+			
+		<TextView android:id="@+id/rowTextView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:layout_centerVertical="true"
+			android:layout_margin="10dip"
+			android:textSize="15dip"
+			android:textColor="#ff77c1fb" />
+			
+		<TextView android:id="@+id/columnTextView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentTop="true"
+			android:layout_centerHorizontal="true"
+			android:layout_margin="10dip"
+			android:textSize="15dip"
+			android:textColor="#ff77c1fb" />
+			
+		<be.ac.ulb.lisa.idot.android.dicomviewer.view.GrayscaleWindowView
+			android:id="@+id/grayscaleImageView"
+			android:src="@drawable/icon"
+			android:layout_width="wrap_content"
+			android:layout_height="fill_parent"
+			android:layout_alignParentRight="true"
+			android:minWidth="100dip" />
+			
+	</RelativeLayout>
+
+</LinearLayout>

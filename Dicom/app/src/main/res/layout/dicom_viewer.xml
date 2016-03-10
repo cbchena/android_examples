@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  Copyright (C) 2011 Pierre Malarme
+ 
+  Authors: Pierre Malarme <pmalarme at ulb.ac.be>
+ 
+  Institution: Laboratory of Image Synthesis and Analysis (LISA)
+               Faculty of Applied Science
+               Universite Libre de Bruxelles (U.L.B.)
+ 
+  Website: http://lisa.ulb.ac.be
+ 
+  This file <dicom_viewer.xml> is part of Droid Dicom Viewer.
+ 
+  Droid Dicom Viewer is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+ 
+  Droid Dicom Viewer is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ 
+  You should have received a copy of the GNU General Public License
+  along with Droid Dicom Viewer. If not, see <http://www.gnu.org/licenses/>.
+ 
+  Released date: 17-02-2011
+ 
+  Version: 1.2
+ -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ android:orientation="horizontal"
+ android:layout_width="fill_parent"
+ android:layout_height="fill_parent">
+ 
+ 	<LinearLayout android:id="@+id/toolBar"
+	 	android:orientation="horizontal"
+	 	android:layout_width="wrap_content"
+	 	android:layout_height="fill_parent"
+	 	android:longClickable="true">
+ 
+	 	<LinearLayout
+	 		android:orientation="vertical"
+	 		android:layout_width="wrap_content"
+	 		android:layout_height="fill_parent"
+	 		android:background="#ff505050"
+	 		android:gravity="center">
+	 		
+	 		<ScrollView
+	 			android:layout_width="wrap_content"
+	 			android:layout_height="wrap_content"
+	 			android:layout_weight="1">
+	 		
+	 			<LinearLayout
+	 				android:orientation="vertical"
+	 				android:layout_width="wrap_content"
+	 				android:layout_height="wrap_content">
+	 				
+	 				<Button android:id="@+id/dimensionMode"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:onClick="dimensionMode"
+						android:layout_margin="5dip"
+						android:background="@drawable/ruler" />
+						
+					<View
+	 					android:layout_width="fill_parent"
+	 					android:layout_height="1dip"
+	 					android:layout_marginTop="10dip"
+	 					android:layout_marginBottom="10dip"
+	 					android:background="#ff7d7d7d" />
+						
+					<Button android:id="@+id/grayscaleMode"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:onClick="grayscaleMode"
+						android:layout_marginLeft="5dip"
+						android:layout_marginRight="5dip"
+						android:layout_marginTop="5dip"
+						android:layout_marginBottom="10dip"
+						android:background="@drawable/grayscale" />
+						
+					<Button android:id="@+id/clutNormal"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:onClick="setCLUTMode"
+						android:layout_margin="5dip"
+						android:background="@drawable/clut_normal_select" />
+						
+					<Button android:id="@+id/clutInverse"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:onClick="setCLUTMode"
+						android:layout_margin="5dip"
+						android:background="@drawable/clut_inverse" />
+						
+					<Button android:id="@+id/clutRainbow"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:onClick="setCLUTMode"
+						android:layout_margin="5dip"
+						android:background="@drawable/clut_rainbow" />
+						
+					<!-- <View
+	 					android:layout_width="fill_parent"
+	 					android:layout_height="1dip"
+	 					android:layout_marginTop="10dip"
+	 					android:layout_marginBottom="10dip"
+	 					android:background="#ff7d7d7d" />
+						
+					<Button android:id="@+id/configButton"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:onClick="grayscaleMode"
+						android:layout_margin="5dip"
+						android:background="@drawable/config" /> -->
+	 			
+	 			</LinearLayout>
+	 		
+	 		</ScrollView>
+	 		
+	 		<Button android:id="@+id/lockUnlockToolbar"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:onClick="lockUnlockToolBar"
+				android:layout_margin="5dip"
+				android:background="@drawable/unlock" />
+	 		
+	 		<View
+	 			android:layout_width="fill_parent"
+	 			android:layout_height="1dip"
+	 			android:layout_marginBottom="2dip"
+	 			android:background="#ff7d7d7d" />
+	 		
+	 		<View
+	 			android:layout_width="fill_parent"
+	 			android:layout_height="1dip"
+	 			android:layout_marginBottom="2dip"
+	 			android:background="#ff7d7d7d" />
+	 			
+	 		<View
+	 			android:layout_width="fill_parent"
+	 			android:layout_height="1dip"
+	 			android:layout_marginBottom="10dip"
+	 			android:background="#ff7d7d7d" />
+	 		
+	 		<ImageView
+	 			android:layout_width="wrap_content"
+	 			android:layout_height="wrap_content"
+	 			android:background="@drawable/ddv_toolbar" />
+	 	
+	 	</LinearLayout>
+	 	
+	 	<View
+	 		android:layout_width="1dip"
+	 		android:layout_height="fill_parent"
+	 		android:background="#ffcccccc" />
+	 		
+	 	<View
+	 		android:layout_width="3dip"
+	 		android:layout_height="fill_parent"
+	 		android:background="#ffb8b7b8" />
+	 		
+	 </LinearLayout>
+
+	<RelativeLayout
+		android:layout_width="wrap_content" 
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+	
+		<FrameLayout
+	   	android:layout_width="fill_parent" 
+        android:layout_height="fill_parent">
+	   
+	   
+
+		<be.ac.ulb.lisa.idot.android.dicomviewer.view.DICOMImageView android:id="@+id/imageView" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="matrix"></be.ac.ulb.lisa.idot.android.dicomviewer.view.DICOMImageView>
+</FrameLayout>
+		
+		<Button android:id="@+id/currentToolButton"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentTop="true"
+			android:onClick="showToolBar"
+			android:layout_margin="5dip"
+			android:background="@drawable/ruler" />
+			
+		<TextView android:id="@+id/rowTextView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:layout_centerVertical="true"
+			android:layout_margin="10dip"
+			android:textSize="15dip"
+			android:textColor="#ff77c1fb" />
+			
+		<TextView android:id="@+id/columnTextView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentTop="true"
+			android:layout_centerHorizontal="true"
+			android:layout_margin="10dip"
+			android:textSize="15dip"
+			android:textColor="#ff77c1fb" />
+			
+		<be.ac.ulb.lisa.idot.android.dicomviewer.view.GrayscaleWindowView
+			android:id="@+id/grayscaleImageView"
+			android:src="@drawable/icon"
+			android:layout_width="wrap_content"
+			android:layout_height="fill_parent"
+			android:layout_alignParentRight="true"
+			android:minWidth="100dip" />
+			
+		<LinearLayout android:id="@+id/navigationToolbar"
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentBottom="true"
+			android:gravity="center_vertical"
+			android:paddingLeft="15dp"
+			android:paddingRight="15dp"
+			android:background="#99808080"
+			android:longClickable="true">
+		
+			<Button android:id="@+id/previousImageButton"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:background="@android:drawable/ic_media_previous"
+				android:paddingTop="20dp"
+				android:paddingBottom="10dp"
+				android:paddingLeft="10dp" 
+				android:onClick="previousImage" />
+				
+			<TextView android:id="@+id/imageIndexView"
+				android:layout_width="30dp"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:layout_margin="10dp"
+				android:textSize="15dp"
+				android:text="0" />
+				
+			<SeekBar android:id="@+id/serieSeekBar"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingTop="10dp"
+				android:paddingBottom="10dp"
+				android:minWidth="220dp"
+				android:layout_weight="1" />
+				
+			<TextView android:id="@+id/imageCountView"
+				android:layout_width="30dp"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:layout_margin="10dp"
+				android:textSize="15dp"
+				android:text="0" />
+				
+			<Button android:id="@+id/nextImageButton"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:background="@android:drawable/ic_media_next"
+				android:paddingTop="20dp"
+				android:paddingBottom="10dp"
+				android:paddingRight="10dp"
+				android:onClick="nextImage" />
+			
+		</LinearLayout>
+		
+	</RelativeLayout>
+
+</LinearLayout>

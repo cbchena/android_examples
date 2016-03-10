@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  Copyright (C) 2011 Pierre Malarme
+ 
+  Authors: Pierre Malarme <pmalarme at ulb.ac.be>
+ 
+  Institution: Laboratory of Image Synthesis and Analysis (LISA)
+               Faculty of Applied Science
+               Universite Libre de Bruxelles (U.L.B.)
+ 
+  Website: http://lisa.ulb.ac.be
+ 
+  This file <dialog_about.xml> is part of Droid Dicom Viewer.
+ 
+  Droid Dicom Viewer is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+ 
+  Droid Dicom Viewer is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ 
+  You should have received a copy of the GNU General Public License
+  along with Droid Dicom Viewer. If not, see <http://www.gnu.org/licenses/>.
+ 
+  Released date: 17-02-2011
+ 
+  Version: 1.1
+ -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:id="@+id/layout_root"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:paddingLeft="10dp"
+             android:paddingRight="10dp"
+             android:paddingBottom="20dp">
+             
+    <View android:id="@+id/topbar"
+    	android:background="#FFFFFFFF"
+    	android:layout_width="700dp"
+    	android:layout_height="1dp"
+    	android:layout_alignParentTop="true"
+    	android:layout_centerHorizontal="true"
+    	android:layout_marginBottom="30dp" />
+              
+    <ImageView android:id="@+id/image"
+    		   android:src="@drawable/ddv"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/topbar"
+               android:layout_marginRight="20dp" />
+               
+	<ScrollView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toRightOf="@id/image"
+	    android:layout_below="@id/topbar">
+               
+	    <LinearLayout
+	    	android:orientation="vertical"
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content">
+	    	
+	    	<TextView android:id="@+id/text"
+	              android:layout_width="wrap_content"
+	              android:layout_height="wrap_content"
+	              android:text="Droid Dicom Viewer is a prototype of DICOM Viewer developped for the Android™ platform.\n\nAuthor: Pierre Malarme (pmalarme@gmail.com)\n\nDepartment: Laboratory of Image Synthesys and Analysis\n\nInstitution: Université Libre de Bruxelles\n\nWebsite: http://code.google.com/p/droid-dicom-viewer/\n\nThe Droid Dicom Viewer is a free and opensource software licensed under the GNU General Public license version 3.\nSee the Droid Dicom License for more details: http://code.google.com/p/droid-dicom-viewer/wiki/License.\nAndroid is a trademark of Google Inc. Use of this trademark is subject to Google Permissions (http://www.google.com/permissions/index.html).\n\n2011 © Pierre Malarme"
+	              android:textColor="#FFF"/>
+	    	
+	    </LinearLayout>
+              
+	</ScrollView>
+             
+</RelativeLayout>

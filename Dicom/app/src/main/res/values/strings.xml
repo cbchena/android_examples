@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  Copyright (C) 2011 Pierre Malarme
+ 
+  Authors: Pierre Malarme <pmalarme at ulb.ac.be>
+ 
+  Institution: Laboratory of Image Synthesis and Analysis (LISA)
+               Faculty of Applied Science
+               Universite Libre de Bruxelles (U.L.B.)
+ 
+  Website: http://lisa.ulb.ac.be
+ 
+  This file <strings.xml> is part of Droid Dicom Viewer.
+ 
+  Droid Dicom Viewer is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+ 
+  Droid Dicom Viewer is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ 
+  You should have received a copy of the GNU General Public License
+  along with Droid Dicom Viewer. If not, see <http://www.gnu.org/licenses/>.
+ 
+  Released date: 17-02-2011
+ 
+  Version: 1.0
+ -->
+<resources>
+    <string name="app_name">Droid Dicom Viewer</string>
+    <string name="about_dialog">Droid Dicom Viewer is a Free and Open Source
+Software (FOSS) licensed under the terms of the GNU General Public
+License as published by the Free Software Foundation, either version 3
+of the License, or (at your option) any later version.\n\n
+THIS VERSION OF DROID DICOM VIEWER IS NOT CERTIFIED AS A MEDICAL DEVICE
+(CE-1 or FDA) FOR PRIMARY DIAGNOSIS OR CLINICAL PRACTICE.
+THIS SOFTWARE CAN ONLY BE USED AS A REVIEWING OR SCIENTIFIC SOFTWARE AND
+CANNOT BE USED AS A MEDICAL DEVICE FOR PRIMARY DIAGNOSTIC OR ANY OTHER
+CLINICAL PRACTICE.\n\n
+Dicom Droid Software is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the Droid Dicom License for more
+details: http://code.google.com/p/droid-dicom-viewer/wiki/License.\n\n
+DICOM COMPATIBILITY\n
+Droid Dicom Viewer implements a part of the DICOM standard.
+It reads DICOM images that are coded on 8 bits and 16 bits.
+It supports only grayscale not compressed DICOM files.
+It parses implicit and explicit (little endian and big endian)
+value representation (VR).\n\n
+2011 � Pierre Malarme</string>
+    <string name="dicom_info_name">DICOM File Information</string>
+</resources>

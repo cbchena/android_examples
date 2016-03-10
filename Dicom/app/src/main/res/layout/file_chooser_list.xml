@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  Copyright (C) 2011 Pierre Malarme
+ 
+  Authors: Pierre Malarme <pmalarme at ulb.ac.be>
+ 
+  Institution: Laboratory of Image Synthesis and Analysis (LISA)
+               Faculty of Applied Science
+               Universite Libre de Bruxelles (U.L.B.)
+ 
+  Website: http://lisa.ulb.ac.be
+ 
+  This file <file_chooser_list.xml> is part of Droid Dicom Viewer.
+ 
+  Droid Dicom Viewer is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+ 
+  Droid Dicom Viewer is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ 
+  You should have received a copy of the GNU General Public License
+  along with Droid Dicom Viewer. If not, see <http://www.gnu.org/licenses/>.
+ 
+  Released date: 17-02-2011
+ 
+  Version: 1.0
+ -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/file_chooser_mainLayout"
+	android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+   
+    	
+    <!-- The frame layout is here since we will be showing either
+    the empty view or the list view.  -->
+    <FrameLayout
+        android:layout_width="fill_parent" 
+        android:layout_height="0dip"
+        android:layout_weight="1">
+        <!-- Here is the list. Since we are using a ListActivity, we
+             have to call it "@android:id/list" so ListActivity will
+             find it -->
+        <ListView android:id="@id/android:list"
+            android:layout_width="fill_parent" 
+            android:layout_height="fill_parent"
+            android:drawSelectorOnTop="false" />
+        
+        <!-- Here is the view to show if the list is emtpy -->
+        <TextView android:id="@id/android:empty"
+            android:layout_width="fill_parent" 
+            android:layout_height="fill_parent"
+            android:text="No files in the folder."/>
+            
+    </FrameLayout>
+    
+    
+</LinearLayout>

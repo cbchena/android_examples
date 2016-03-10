@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  Copyright (C) 2011 Pierre Malarme
+ 
+  Authors: Pierre Malarme <pmalarme at ulb.ac.be>
+ 
+  Institution: Laboratory of Image Synthesis and Analysis (LISA)
+               Faculty of Applied Science
+               Universite Libre de Bruxelles (U.L.B.)
+ 
+  Website: http://lisa.ulb.ac.be
+ 
+  This file <dicom_viewer_menu.xml> is part of Droid Dicom Viewer.
+ 
+  Droid Dicom Viewer is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+ 
+  Droid Dicom Viewer is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ 
+  You should have received a copy of the GNU General Public License
+  along with Droid Dicom Viewer. If not, see <http://www.gnu.org/licenses/>.
+ 
+  Released date: 17-02-2011
+ 
+  Version: 1.1
+ -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <item android:title="LUT/CLUT">
+    
+		<menu>
+		
+			<group android:id="@+id/select_lut_clut"
+                    android:checkableBehavior="single">
+                    
+				<item android:id="@+id/show_normalLUT"
+					android:title="Grayscale LUT (default)"
+					android:checked="true" />
+				
+				<item android:id="@+id/show_inverseLUT"
+					android:title="Inverse Grayscale LUT" />
+			
+				<item android:id="@+id/show_rainbowCLUT"
+					android:title="Rainbow CLUT" />
+					
+			</group>
+		
+		</menu>    
+    
+    </item>
+    
+    <item android:title="Grayscale Window">
+    
+    	<menu>
+    	
+    		<item android:id="@+id/grayscaleWindow_CTBone"
+    			android:title="CT Bone" />
+    			
+    		<item android:id="@+id/grayscaleWindow_CTCrane"
+    			android:title="CT Crane" />
+    			
+    		<item android:id="@+id/grayscaleWindow_CTLung"
+    			android:title="CT Lung" />
+    			
+    		<item android:id="@+id/grayscaleWindow_CTAbdomen"
+    			android:title="CT Abdomen" />
+    	
+    	</menu>
+    	
+    </item>
+    
+    <item android:title="Image size">
+	
+		<menu>
+			
+			<group android:id="@+id/image_scale_mode"
+					android:checkableBehavior="single">
+					
+				<item android:id="@+id/fit_to_screen"
+					android:title="Fit to screen"
+					android:checked="true" />
+					
+				<item android:id="@+id/real_size"
+					android:title="Real size (1:1)" />				
+			
+			</group>
+			
+		</menu>
+		
+	</item>
+	
+	<item android:title="Display settings">
+    
+    	<menu>
+    	
+    		<item android:id="@+id/showHide_grayscaleWindow"
+    			android:checkable="true" android:title="Show Grayscale Window"/>
+    			
+    		<item android:id="@+id/showHide_serieSeekBar"
+    			android:checkable="true" android:title="Show Series Navigation"/>
+    			
+    		<item android:id="@+id/showHide_toolbar"
+    			android:checkable="true" android:title="Show Toolbar"/>
+    			
+    		<item android:id="@+id/lock_toolbar"
+    			android:checkable="true" android:title="Lock Toolbar"/>
+    	
+    	</menu>
+    	
+    </item>
+
+    <item android:id="@+id/ddv_ShowImageMetaData"
+          android:title="View Metadata"/>
+    
+    <item android:id="@+id/ddv_RotateImage"
+    	android:title="Rotate"/>
+    
+    <item android:id="@+id/ddv_CacheAllImage"
+    	android:title="Cache all images" />
+    
+    <item android:id="@+id/ddv_DialogAbout"
+    	android:title="About" />
+	
+</menu>

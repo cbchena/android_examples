@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ android:orientation="horizontal"
+ android:layout_width="fill_parent"
+ android:layout_height="fill_parent">
+ 
+ 	<!--<LinearLayout android:id="@+id/toolBar"-->
+	 	<!--android:orientation="horizontal"-->
+	 	<!--android:layout_width="wrap_content"-->
+	 	<!--android:layout_height="fill_parent"-->
+	 	<!--android:longClickable="true">-->
+ <!---->
+	 	<!--<View-->
+	 		<!--android:layout_width="1dip"-->
+	 		<!--android:layout_height="fill_parent"-->
+	 		<!--android:background="#ffcccccc" />-->
+	 		<!---->
+	 	<!--<View-->
+	 		<!--android:layout_width="3dip"-->
+	 		<!--android:layout_height="fill_parent"-->
+	 		<!--android:background="#ffb8b7b8" />-->
+	 		<!---->
+	 <!--</LinearLayout>-->
+
+	<RelativeLayout
+		android:layout_width="wrap_content" 
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+	
+		<FrameLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent">
+
+			<be.ac.ulb.lisa.idot.android.dicomviewer.view.DICOMImageView
+					android:id="@+id/imageView"
+					android:layout_width="fill_parent"
+					android:layout_height="fill_parent"
+					android:scaleType="matrix" />
+		</FrameLayout>
+			
+	</RelativeLayout>
+
+</LinearLayout>
