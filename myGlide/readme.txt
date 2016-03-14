@@ -1,0 +1,1 @@
+Google推荐使用的图片加载器Glide的使用DEMO，支持加载gif图片；
