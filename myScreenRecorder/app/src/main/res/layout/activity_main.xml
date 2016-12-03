@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_vertical"
+        android:orientation="vertical" >
+
+        <RadioButton
+            android:id="@+id/sd_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/standard_definition" />
+
+        <RadioButton
+            android:id="@+id/hd_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/high_definition" />
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/audio_check_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radio_group"
+        android:layout_alignStart="@+id/radio_group"
+        android:layout_marginTop="20dp"
+        android:checked="true"
+        android:text="@string/audio" />
+
+    <TextView
+        android:id="@+id/button_control"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/audio_check_box"
+        android:layout_marginTop="@dimen/margin_vertical"
+        android:paddingBottom="@dimen/padding_vertical"
+        android:paddingLeft="@dimen/padding_horizontal"
+        android:paddingRight="@dimen/padding_horizontal"
+        android:paddingTop="@dimen/padding_vertical"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_20" />
+
+</RelativeLayout>
